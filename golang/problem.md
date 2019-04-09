@@ -12,6 +12,8 @@ Please write said command line tool in Golang so it can solve the following prob
 
 The API key will be provided separately.
 
+Please submit your solution as ZIP-file to career@affinityclick.com
+
 ## Problem 1: Common Actors
 
 Given a list of search terms (e.g. movie titles) "star wars" "fugitive" "ender" we would like to know what are all the actors that appear in more than one of the movies that match these search terms.
