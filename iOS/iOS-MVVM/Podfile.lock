@@ -4,9 +4,9 @@ PODS:
   - SideMenu (5.0.1)
 
 DEPENDENCIES:
-  - Cosmos
-  - Kingfisher
-  - SideMenu
+  - Cosmos (= 18.0.1)
+  - Kingfisher (= 4.10.1)
+  - SideMenu (= 5.0.1)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -19,6 +19,6 @@ SPEC CHECKSUMS:
   Kingfisher: c148cd7b47ebde9989f6bc7c27dcaa79d81279a0
   SideMenu: 87efd943737bb83aedf0358884d09fcf5576636d
 
-PODFILE CHECKSUM: 5c376c169bb18c79476c585449ab39f9103b5c84
+PODFILE CHECKSUM: 16973de6e57a4a1007c03f64c91b58fff5a7c437
 
 COCOAPODS: 1.6.0.beta.2
