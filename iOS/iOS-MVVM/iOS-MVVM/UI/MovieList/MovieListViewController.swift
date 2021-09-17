@@ -25,18 +25,15 @@ class MovieListViewController: UIViewController, ActivityIndicatorContainer {
         super.viewDidLoad()
         setupUI()
         setupSideMenu()
-        viewModel.bind(to: self)
-        fetchMovies()
     }
 
     // MARK: - Private
 
-    private func fetchMovies() {
+    private func startLoading() {
         activityIndicator.startAnimating()
         tableView.isHidden = true
-        viewModel.fetchMovies()
     }
-
+    
     private func setupUI() {
         title = "Top Rated Movies"
         tableView.register(UINib(nibName: "MovieListCell", bundle: nil), forCellReuseIdentifier: "MovieListCell")
@@ -73,21 +70,11 @@ class MovieListViewController: UIViewController, ActivityIndicatorContainer {
     }
 }
 
-extension MovieListViewController: MovieListViewModelDelegate {
-    func didFetchMovies(_ movies: [Movie]) {
-        activityIndicator.stopAnimating()
-        dataSource.data = movies
-        tableView.isHidden = false
-        tableView.reloadData()
-    }
-}
-
 extension MovieListViewController: MovieListDataSourceDelegate {
     func didSelectMovie(_ movie: Movie) {
         guard let vc = storyBoard.instantiateViewController(withIdentifier: "MovieDetailViewController") as? MovieDetailViewController else {
             return
         }
-        vc.viewModel.movie = movie
         navigationController?.pushViewController(vc, animated: true)
     }
 }
@@ -97,7 +84,6 @@ extension MovieListViewController: MenuViewControllerDelegate {
         if navigationController?.viewControllers.last != self {
             navigationController?.popToRootViewController(animated: true)
         }
-        fetchMovies()
     }
 
     func didSelectNowPlayingMovies() {

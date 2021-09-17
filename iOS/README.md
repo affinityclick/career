@@ -24,17 +24,16 @@ The architecture used in the project is MVVM and UI is created using storyboards
 For screens that contain a table view/collection view:
 - **DataSource**: Implementation of `UITableViewDataSource` & `UITableViewDelegate` (similarly for collection views). Contains the data that it is rendering and any table view/collection view related logic.
 
-## Core Task
+## Core Tasks
 
-The app currently shows a list of the top rated movies and has a detail screen for those movies. From the detail screen you can view a credits page, we would like you to build this credits page. You'll need to build the UI for the credits screen and add in the network call, the models should already exist within the project. Below is a potential UI for what the credit items could be.
+The app currently has a VC and a service to look up top rated movies, these need to be connected. Once you click on a movie it should take you to a detail screen where again, the VC and Service layers are written but need to be connected. From the detail screen you can view a credits page, we would like you to build this credits page. You'll need to build the UI for the credits screen and add in the network call, the models should already exist within the project. Below is a potential UI for what the credit items could be.
 
 ![Sample mockup](https://user-images.githubusercontent.com/16737168/56301760-7446b600-6106-11e9-8bc1-630521ecd3ba.jpg)
 
 ### Bonus Tasks
 
-If you have completed the credits screen in less than 3 hours, feel free to start implementing the following features. We don't want you to exceed 4 hours working on this project so please send any partial solutions you have to these problems and a brief explanation on how you would ideally want to complete the taks you are working on.
+If you have completed the credits screen in less than 4 hours, feel free to start implementing the following features. We don't want you to exceed 4 hours working on this project so please send any partial solutions you have to these problems and a brief explanation on how you would ideally want to complete the taks you are working on. 
 
 - Make the list of top rated movies an infinite scrolling list (load the next page of content)
 - Add in logic to display trailers on the movie detail screen
 - Add in logic to display reviews on the movie detail screen
-- Add another movie list to the nav menu (see api for potential endpoints)

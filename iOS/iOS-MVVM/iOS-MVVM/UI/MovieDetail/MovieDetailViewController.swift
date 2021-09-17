@@ -28,25 +28,16 @@ class MovieDetailViewController: UIViewController {
         super.viewDidLoad()
         setupNavigationBar()
         setMovieUI()
-        viewModel.bind(to: self)
-        viewModel.fetchGenres()
     }
 
     // MARK: - Private
 
     private func setupNavigationBar() {
-        title = viewModel.movie.title
         navigationItem.largeTitleDisplayMode = .never
     }
 
     private func setMovieUI() {
-        let backdropImageURL = URL(string: Constants.imageBaseURL + viewModel.movie.backdropPath)
-        backdropImageView.kf.setImage(with: backdropImageURL)
-        titleLabel.text = viewModel.movie.title
-        ratingView.settings.fillMode = .precise
-        ratingView.rating = viewModel.movie.voteAverage / 2
-        releaseDateLabel.text = viewModel.movie.releaseDate
-        overviewLabel.text = viewModel.movie.overview
+
     }
 
     // MARK: - Actions
@@ -57,11 +48,5 @@ class MovieDetailViewController: UIViewController {
             return
         }
         navigationController?.pushViewController(vc, animated: true)
-    }
-}
-
-extension MovieDetailViewController: MovieDetailViewModelDelegate {
-    func didFetchGenres(_ genres: String) {
-        genresLabel.text = genres
     }
 }
